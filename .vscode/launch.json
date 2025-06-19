@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DemoSecurity",
+            "request": "launch",
+            "mainClass": "com.api.ecommerce.DemoSecurity",
+            "projectName": "nbastore"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EcommerceApplication<nbastore>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.api.ecommerce.EcommerceApplication",
+            "projectName": "nbastore",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
