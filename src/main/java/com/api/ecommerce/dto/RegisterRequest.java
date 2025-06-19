@@ -1,5 +1,6 @@
 package com.api.ecommerce.dto;
 
+import com.api.ecommerce.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,4 +15,5 @@ public class RegisterRequest {
     private String apellido;
     private String email;
     private String password;
+    private Role role; // Nuevo campo para indicar si el usuario es ADMIN o USER
 }

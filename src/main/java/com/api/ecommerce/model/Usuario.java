@@ -24,17 +24,16 @@ public class Usuario implements UserDetails {
     private String apellido;
     private String email;
 
-    @ToString.Exclude // Evita mostrar en logs o toString
-    @EqualsAndHashCode.Exclude // Evita problemas de comparación por seguridad
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private String password;
 
-    private Role role; // ADMIN o USER
+    private Role role; // Enum: ADMIN o USER
 
-    // Implementación de métodos requeridos por UserDetails:
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Agrega el prefijo ROLE_ por convención de Spring Security
-        return List.of(new SimpleGrantedAuthority("ROLE_" + (role != null ? role.name() : "USER")));
+        // 🔐 Este es el fragmento clave: el ROLE_ es requerido por Spring Security
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
 
     @Override
@@ -44,7 +43,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return true; 
+        return true;
     }
 
     @Override
@@ -61,5 +60,5 @@ public class Usuario implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 }
+
