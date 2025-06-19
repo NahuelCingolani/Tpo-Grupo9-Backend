@@ -1,0 +1,7 @@
+com\api\ecommerce\controller\CarritoController.class
+com\api\ecommerce\model\ItemCarrito.class
+com\api\ecommerce\controller\AuthController.class
+com\api\ecommerce\model\Usuario.class
+com\api\ecommerce\model\Carrito.class
+com\api\ecommerce\repository\UsuarioRepository.class
+com\api\ecommerce\repository\CarritoRepository.class
