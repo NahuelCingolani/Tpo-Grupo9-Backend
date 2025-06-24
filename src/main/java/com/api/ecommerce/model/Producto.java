@@ -1,17 +1,16 @@
 package com.api.ecommerce.model;
-import java.util.Map;
 
 import lombok.*;
-
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "productos")
+import java.util.List;
+import java.util.Map;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Document(collection = "productos")
 public class Producto {
     @Id
     private String id;
