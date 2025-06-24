@@ -52,11 +52,8 @@ Configurar MongoDB
 
 Crear archivo .env si se desea pasar las variables como:
 
-MONGO_URI=mongodb+srv://Admin:clave@cluster.mongodb.net/ecommerce
+MONGO_URI=mongodb+srv://Admin:hola12345@backend.sxgqpbe.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=backend
 
-O editar directamente en application.properties:
-
-spring.data.mongodb.uri=<TU_URI_DE_MONGODB>
 
 Ejecutar con Docker
 
