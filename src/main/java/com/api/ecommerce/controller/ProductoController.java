@@ -123,9 +123,12 @@ public class ProductoController {
         productoRepository.deleteAll();
         return ResponseEntity.ok("Todos los productos fueron eliminados.");
     }
+
     @GetMapping("/equipo/{equipo}")
     public ResponseEntity<List<Producto>> obtenerPorEquipo(@PathVariable String equipo) {
         List<Producto> productos = productoRepository.findByEquipoIgnoreCase(equipo);
         return ResponseEntity.ok(productos);
     }
+
 }
+
