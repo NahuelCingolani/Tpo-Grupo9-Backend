@@ -1,14 +1,25 @@
-version: "3.8"
-
 services:
-  backend:
-    build: .
+  mongo:
+    image: mongo:latest
+    restart: always
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    volumes:
+      - mongo_data:/data/db
+
+  spring-backend:
+    image: tpo-grupo9-backend-backend
     container_name: spring-backend
     ports:
       - "8080:8080"
     environment:
-      MONGO_URI: ${MONGO_URI}
+      SPRING_DATA_MONGODB_URI: mongodb://admin:123456@mongo:27017/ecommerce?authSource=admin
+    depends_on:
+      - mongo
 
-
-
-
+volumes:
+  mongo_data:
